@@ -1,4 +1,4 @@
-%AUTHORS: ALMUDENA M…NDEZ P…REZ & JES⁄S DAZA GARCÕA
+%AUTHORS: ALMUDENA M√âNDEZ P√âREZ & JES√öS DAZA GARC√çA
 
 %Scaling: 
 %Time is rescaled in units of the mRNA lifetime, the number of repressors necessary to half-maximally repress a promoter 
