@@ -1,4 +1,4 @@
-%AUTHORS: ALMUDENA M√âNDEZ P√âREZ & JES√öS DAZA GARC√çA
+%AUTHORS: ALMUDENA M…NDEZ P…REZ & JES⁄S DAZA GARCÕA
 
 clear;
 to = 0;
@@ -12,25 +12,25 @@ tf = 21600;
 %ON STATE
 
 %Initial conditions for v1 
-normalo = [0 133900 0 0 0 76000 0 0];
+%normalo = [0 133900 0 0 0 75900 0 0];
 
 %Initial conditions for v3 
-%normalo = [0 133900 0 0 0 -0.000000006 0 86478];
+%normalo = [0 133900 0 0 0 0 0 86780];
 
 %Initial conditions for v10 
-%normalo = [0 133900 0 0 0 786.6 0 0];
-
+%normalo = [0 133900 0 0 0 759.8 0 0];
+ 
 options = odeset('NonNegative',2);
-[t, y] = ode45('v1',[to tf],normalo,options);
+[t, y] = ode45('v10',[to tf],normalo,options);
 plot(t,y(:,2),'color','b'); hold on;
 plot(t,y(:,4),'color','g'); hold on;
 plot(t,y(:,6),'color','r'); hold on;
 plot(t,y(:,8),'color','y'); 
 
-title('Protein concentrations')
+%title('Protein concentrations')
 xlabel('Time (h.)')
-ylabel('Concentration')
-legend('tetR','cI','LacI','TSS3 reporter')
+ylabel('Protein concentrations')
+legend('tetR','cI','LacI','T3SS reporter')
 
 disp(y(2));
 disp(y(4)); 

@@ -1,4 +1,4 @@
-%AUTHORS: ALMUDENA M√âNDEZ P√âREZ & JES√öS DAZA GARC√çA
+%AUTHORS: ALMUDENA M…NDEZ P…REZ & JES⁄S DAZA GARCÕA
 
 clear;
 to = 0;
@@ -10,7 +10,7 @@ tf = 21600;
 %normalo = [0 0 0 0 0 0 0 0 0 0];
 
 %v15 ON STATE
-normalo = [0 133900 0 0 0 76000 0 0 0 0];
+normalo = [0 133900 0 0 0 75980 0 0 0 0];
 
 options = odeset('NonNegative',2);
 [t, y] = ode45('v15',[to tf],normalo,options);
@@ -23,7 +23,7 @@ plot(t,y(:,10),'color','m');
 title('Protein concentrations')
 xlabel('Time')
 ylabel('Concentration')
-legend('tetR','cI','LacI','TSS3 reporter','PROTEASE')
+legend('tetR','cI','LacI','T3SS reporter','PROTEASE')
 
 disp(y(2));
 disp(y(4)); 

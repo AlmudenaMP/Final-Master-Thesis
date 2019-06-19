@@ -1,4 +1,4 @@
-%AUTHORS: ALMUDENA MÃ‰NDEZ PÃ‰REZ & JESÃšS DAZA GARCÃA
+%AUTHORS: ALMUDENA MÉNDEZ PÉREZ & JESÚS DAZA GARCÍA
 
 %Scaling: 
 %Time is rescaled in units of the mRNA lifetime, the number of repressors necessary to half-maximally repress a promoter 
@@ -48,11 +48,11 @@ betaProt = 0.001155;
 betaLacI = 0.001155; 
 betaEspB = 0.001155;
 
-%Binding constant (M^-1).
-KbATc = 1.26*10^(12); % -> Two mutations in the tetracycline repressor change the inducer anhydrotetracycline to a corepressor
-KbtetR = 5.6*10^(9); % -> Two mutations in the tetracycline repressor change the inducer anhydrotetracycline to a corepressor
-KbcI = 1.6*10^(9); % -> The Lysis-Lysogeny Decision of Bacteriophage 933W: a 933W Repressor-Mediated Long-Distance Loop Has No Role in Regulating 933W PRM Activity
-KbLacI = 10^(11); % -> A  genetic  biosensor  for  identification of transcriptional repressors of target promoters
+%Binding constants (M^-1): adapted as in http://2009.igem.org/Team:Aberdeen_Scotland/parameters/invest_1#Dissociation_Constants
+KbATc = 1.26*10^(10); % -> Two mutations in the tetracycline repressor change the inducer anhydrotetracycline to a corepressor
+KbtetR = 5.6*10^(6); % -> Two mutations in the tetracycline repressor change the inducer anhydrotetracycline to a corepressor & Volume 272, Number 11, Issue of March 14, 1997 pp. 6936-6942, The Role of the Variable Region in Tet Repressor for Inducibility by Tetracycline, Christian Berens , Dirk Schnappinger and Wolfgang Hillen
+KbcI = 1.6*10^(6); % -> http://2007.igem.org/title=ETHZ/Parameters
+KbLacI = 10^(5.5); % -> The Lac repressor & Operator DNA sequence Variation Enhances High Affinity Binding by Hinge Helix Mutants of Lactose Repressor Protein
 
 %mRNA translation efficiency (s^-1) 
 %Adapted from (Michael B. Elowitz Nature, 2000)
@@ -113,7 +113,7 @@ v1(7) = -mEspB*y(7) + alphaEspB/(1+KbLacI*(y(6)^nLacI)) + lEspB; %mRNA
 v1(8) = -betaEspB*y(8) + gammaEspB*y(7); %protein
 
 %PROTEASE
-v1(9) = -mProt*y(9) + alphaProt/(1+KbtetR*(y(2)^ntetR)) + lProt; %mRNA
+v1(9) = -mProt*y(9) + alphaProt/(1+(KbtetR*y(2))^ntetR) + lProt; %mRNA
 v1(10) = (-betaProt*y(10) + gammaProt*y(9))*i; %protein
 
 v1=[v1(1); v1(2); v1(3); v1(4); v1(5); v1(6); v1(7); v1(8); v1(9); v1(10);];
